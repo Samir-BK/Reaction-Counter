@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Declearing Css Global Varibales on the top so that can be used later*/
+:root {
+  --light-grey: #efefef;
+  --white: #fff;
+  --very-dark-blue: #0a0a23;
+  --light-purple: #a78bfa;
+  --very-light-purple: #c4b5fd;
+  --purple: #8b5cf6;
+  --pink: pink;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--light-grey);
+  font-family: sans-serif;
+}
+main {
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.button-container,
+button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.button-container {
+  flex-direction: column;
+}
+
+.emoji-btn {
+  width: 70%;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--light-purple);
+  background-image: linear-gradient(
+    to bottom,
+    var(--very-light-purple),
+    var(--light-purple)
+  );
+  border: 3px solid var(--light-purple);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  transition: background-color 0.4s ease-in-out, transform 0.2s ease;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--purple);
+  box-shadow: 2px 4px 10px var(--pink);
+  border-radius: 12px;
+  background-image: none;
+}
+
+span {
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .emoji-btn {
+    width: 30%;
+  }
+}
+
+.title {
+  margin-top: 15px;
+  font-size: 2rem;
+}
+.description {
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
